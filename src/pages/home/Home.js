@@ -21,6 +21,7 @@ const Home = () => {
         showStatus={false}>
             {
                 popularMovies.map(movie =>(
+                
                     <Link style={{textDecoration: "none", color: "white"}} to={`/movie/${movie.id}`}>
                     <div className='posterImage'>
                         <img src={`http://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="" />

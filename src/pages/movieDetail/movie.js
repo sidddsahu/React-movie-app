@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router'
 import './movie.css'
-// import { Link } from 'react-router-dom'/
 const Movie = () => {
     const [currentMovieDetail, setMovie] = useState()
     const { id } = useParams()
@@ -9,7 +8,7 @@ const Movie = () => {
     useEffect(() => {
         getData()
         window.scrollTo(0,0)
-    }, [])
+    }, )
 
     const getData = () => {
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
@@ -59,10 +58,10 @@ const Movie = () => {
     <div className="movie__links">
         <div className="movie__heading">Useful Links</div>
         {
-            currentMovieDetail && currentMovieDetail.homepage && <a href={currentMovieDetail.homepage} target="_blank" style={{textDecoration: "none"}}><p><span className="movie__homeButton movie__Button">Homepage <i className="newTab fas fa-external-link-alt"></i></span></p></a>
+            currentMovieDetail && currentMovieDetail.homepage && <a href={currentMovieDetail.homepage}  style={{textDecoration: "none"}}><p><span className="movie__homeButton movie__Button">Homepage <i className="newTab fas fa-external-link-alt"></i></span></p></a>
         }
         {
-            currentMovieDetail && currentMovieDetail.imdb_id && <a href={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id} target="_blank" style={{textDecoration: "none"}}><p><span className="movie__imdbButton movie__Button">IMDb<i className="newTab fas fa-external-link-alt"></i></span></p></a>
+            currentMovieDetail && currentMovieDetail.imdb_id && <a href={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id}  style={{textDecoration: "none"}}><p><span className="movie__imdbButton movie__Button">IMDb<i className="newTab fas fa-external-link-alt"></i></span></p></a>
         }
     </div>
     <div className="movie__heading">Production companies</div>
